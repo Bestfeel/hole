@@ -61,6 +61,7 @@ func AddHook() {
 	}, &logrus.JSONFormatter{DisableTimestamp: false})
 
 	std.Log.AddHook(lfHook)
+	InfoWithFields("add hook", logrus.Fields{"path": std.LogPath})
 }
 
 func SetOutput(out io.Writer) {
