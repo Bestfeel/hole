@@ -95,27 +95,27 @@ func SetLevel(level string) {
 		logrus.SetLevel(logrus.DebugLevel)
 		logrus.SetOutput(os.Stderr)
 	case "info", "INFO":
-		setNull()
+		SetDevNull()
 		logrus.SetLevel(logrus.InfoLevel)
 	case "warn", "WARN":
-		setNull()
+		SetDevNull()
 		logrus.SetLevel(logrus.WarnLevel)
 	case "error", "ERROR":
-		setNull()
+		SetDevNull()
 		logrus.SetLevel(logrus.ErrorLevel)
 	case "panic", "PANIC":
-		setNull()
+		SetDevNull()
 		logrus.SetLevel(logrus.PanicLevel)
 	case "fatal", "FATAL":
-		setNull()
+		SetDevNull()
 		logrus.SetLevel(logrus.FatalLevel)
 	default:
-		setNull()
+		SetDevNull()
 		logrus.SetLevel(logrus.InfoLevel)
 	}
 }
 
-func setNull() {
+func SetDevNull() {
 	src, err := os.OpenFile(os.DevNull, os.O_APPEND|os.O_WRONLY, os.ModeAppend)
 
 	if err != nil {
