@@ -15,7 +15,6 @@ import (
 type Logger struct {
 	Log              *logrus.Logger
 	LogPath          string
-	LogName          string
 	LogTimeSplit     string
 	WithMaxAge       time.Duration
 	WithRotationTime time.Duration
@@ -79,9 +78,6 @@ func SetLogPath(path string) {
 	std.LogPath = path
 }
 
-func SetLogName(name string) {
-	std.LogName = name
-}
 func SetMaxAge(time time.Duration) {
 
 	std.WithMaxAge = time
