@@ -3,13 +3,13 @@ package logger
 import (
 	"bufio"
 	"fmt"
+	"io"
 	"os"
 	"time"
 
 	"github.com/Sirupsen/logrus"
 	"github.com/lestrrat/go-file-rotatelogs"
 	"github.com/pkg/errors"
-	"io"
 )
 
 type Logger struct {
@@ -79,6 +79,9 @@ func SetLogPath(path string) {
 	std.LogPath = path
 }
 
+func SetLogName(name string) {
+	std.LogName = name
+}
 func SetMaxAge(time time.Duration) {
 
 	std.WithMaxAge = time
